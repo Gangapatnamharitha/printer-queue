@@ -1,0 +1,13 @@
+---
+- name: sample playbook
+  hosts: ansible_client
+  become: true
+  tasks:
+   - name: install httpd
+     yum:
+         name: httpd
+         state: started
+   - name: create data
+     copy:
+          content: " Welcome to the ansible installation page"
+          dest: /var/www/html/indexhtml
